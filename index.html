@@ -1,0 +1,1664 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+  <title>Our 1 Year — Anniversary</title>
+  <meta name="description" content="Anniversary site — timeline, countdown, VS game, music & confetti."/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== Month image ribbon / bookmark ===== */
+.img-wrap {
+  position: relative;
+  display: block;
+  width: 88%;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.detail-img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(181,138,242,0.18);
+  display: block;
+}
+
+.ribbon {
+  position: absolute;
+  top: 12px;
+  right: -8px;
+  background: linear-gradient(135deg, #ff9ec9 0%, #e6d9ff 100%);
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px 0 0 6px;
+  box-shadow: 0 3px 8px rgba(255,79,139,0.25);
+  transform: rotate(2deg);
+  letter-spacing: 0.5px;
+  z-index: 2;
+}
+
+.ribbon::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  right: 0;
+  border-left: 6px solid transparent;
+  border-top: 6px solid #c49bff;
+  filter: brightness(0.95);
+}
+
+/* ===== Two photos side by side ===== */
+.img-pair {
+  display: flex;
+  gap: 10px;
+  width: 92%;
+  max-width: 560px;
+  justify-content: center;
+}
+
+.img-pair .img-wrap {
+  flex: 1;
+  min-width: 0;
+}
+
+.img-pair .img-wrap .detail-img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+@media (max-width: 400px) {
+  .img-pair .img-wrap .detail-img {
+    height: 150px;
+  }
+}
+
+    :root{
+      --pink-strong:#FFB7C5;
+      --pink-soft:#fad3de;
+      --blush:#FFF1F2;
+      --ivory:#FFFEF1;
+      --lav:#c4a6fd;
+      --accent:#FF4F8B;
+      --accent-2:#B58AF2;
+      --text:#241b2d;
+      --muted:#6F5AAE;
+      --glass: rgba(255,255,255,0.56);
+      --glass-strong: rgba(255,255,255,0.72);
+      --glass-border: rgba(255,255,255,0.58);
+      --shadow: 0 10px 28px rgba(35, 10, 60, 0.12);
+      --shadow-strong: 0 18px 52px rgba(255, 79, 139, 0.22);
+      --radius: 18px;
+      --pad: 16px;
+      --maxw: 820px;
+      --trans-fast: 180ms;
+      --trans-med: 460ms;
+      --focus: 0 0 0 4px rgba(255, 79, 139, 0.22);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family:"Poppins",system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      overflow:hidden;
+      -webkit-tap-highlight-color:transparent;
+      background:
+        radial-gradient(900px 520px at 18% 10%, rgba(255, 79, 138, 0.158), transparent 60%),
+        radial-gradient(920px 520px at 84% 18%, rgba(230,217,255,.65), transparent 62%),
+        radial-gradient(720px 460px at 55% 92%, rgba(255, 183, 197, 0.369), transparent 60%),
+        linear-gradient(135deg, var(--pink-soft) 0%, #fbeabe49 55%, var(--lav) 120%);
+      background-attachment: fixed;
+    }
+
+    body::before, body::after{
+      content:"";
+      position:fixed;
+      inset:auto;
+      width:520px;height:520px;
+      filter: blur(40px);
+      opacity:0.55;
+      z-index:0;
+      pointer-events:none;
+    }
+    body::before{
+      left:-220px; top:-180px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,79,139,0.40), transparent 60%),
+                  radial-gradient(circle at 70% 60%, rgba(230,217,255,0.55), transparent 62%);
+    }
+    body::after{
+      right:-240px; bottom:-240px;
+      background: radial-gradient(circle at 35% 35%, rgba(255,183,197,0.48), transparent 60%),
+                  radial-gradient(circle at 60% 70%, rgba(181,138,242,0.35), transparent 62%);
+    }
+
+    .grain{
+      position:fixed; inset:0; z-index:1; pointer-events:none; opacity:0.08;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+      mix-blend-mode: soft-light;
+    }
+
+    .container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 calc(var(--pad)*0.9);position:relative;z-index:2;}
+    .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+
+    .btn{
+      border:0;border-radius:999px;padding:11px 18px;
+      background: linear-gradient(180deg, var(--accent) 0%, #ff2f79 100%);
+      color:#fff;font-weight:800;
+      box-shadow: var(--shadow-strong);
+      cursor:pointer;font-size:1rem;
+      transition: transform var(--trans-fast), filter var(--trans-fast), box-shadow var(--trans-fast);
+    }
+    .btn:hover{transform: translateY(-2px);filter:saturate(1.05) brightness(1.02);box-shadow: 0 22px 60px rgba(255,79,139,0.26);}
+    .btn:active{transform: translateY(0) scale(0.99);}
+    .btn:focus-visible{outline:none; box-shadow: var(--shadow-strong), var(--focus);}
+    .btn.secondary{background: rgba(255,255,255,0.42);color: var(--accent);border: 1.5px solid rgba(255,79,139,0.22);box-shadow: var(--shadow);backdrop-filter: blur(14px);-webkit-backdrop-filter: blur(14px);}
+
+    .icon-btn{
+      width:46px;height:46px;border-radius:14px;
+      background: var(--glass);
+      display:flex;align-items:center;justify-content:center;
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--shadow);cursor:pointer;
+      transition: transform var(--trans-fast), box-shadow var(--trans-fast), background var(--trans-fast);
+      backdrop-filter: blur(14px);-webkit-backdrop-filter: blur(14px);position:relative;
+    }
+    .icon-btn:hover{transform: translateY(-2px); box-shadow: 0 16px 40px rgba(35, 10, 60, 0.16);}
+    .icon-btn:active{transform: translateY(0);}
+    .icon-btn:focus-visible{outline:none; box-shadow: var(--shadow), var(--focus);}
+    .icon-btn svg{width:20px;height:20px;fill:var(--accent)}
+
+    #toast{
+      position:fixed; left:50%; bottom:18px; transform:translateX(-50%);
+      padding:10px 12px; border-radius:999px;
+      background: rgba(255,255,255,0.78);border: 1px solid rgba(255,255,255,0.72);
+      box-shadow: var(--shadow);color: var(--muted);font-weight:800;
+      z-index:260;opacity:0;pointer-events:none;
+      transition: opacity 220ms ease, transform 220ms ease;
+      backdrop-filter: blur(12px);-webkit-backdrop-filter: blur(12px);
+      text-align:center;max-width:min(92vw, 520px);
+    }
+    #toast.show{opacity:1; transform:translateX(-50%) translateY(-6px);}
+
+    #splash {
+      position: fixed;inset: 0;display: flex;align-items: center;justify-content: center;
+      z-index: 120;background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,227,235,0.82));
+      padding: calc(var(--pad) * 1.2);
+    }
+    #splash .container {
+      text-align: center;display: flex;flex-direction: column;align-items: center;
+      justify-content: center;min-height: 100vh;
+    }
+    .title{font-family:"Pacifico",cursive;font-size:2.45rem;color:var(--accent);text-align:center;text-shadow: 0 12px 26px rgba(255,79,139,0.20), 0 2px 0 rgba(255,255,255,0.65);letter-spacing: .2px;}
+    .lead{color:var(--muted);text-align:center;margin-top:10px;font-weight:600}
+    .enter-row{margin-top:18px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .note{margin-top:14px;color:#7f69b6;text-align:center;line-height:1.4}
+
+    .top-controls{position:fixed;top:14px;right:14px;display:flex;gap:10px;z-index:200;}
+
+    #home {
+      position: fixed;inset: 0;display: none;padding: calc(var(--pad) * 1.2);z-index: 100;
+      display: flex;flex-direction: column;align-items: center;justify-content: center;
+      overflow-y: auto;text-align: center;
+    }
+    .home-inner {
+      width: 100%;max-width: var(--maxw);margin: 0 auto;padding-top: 0;
+      display: flex;flex-direction: column;align-items: center;justify-content: center;min-height: 100vh;
+    }
+    .count-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .time-card{
+      min-width:78px;padding:12px;border-radius:14px;
+      background: var(--glass);border: 1px solid var(--glass-border);
+      text-align:center;box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);-webkit-backdrop-filter: blur(14px);
+    }
+    .time-card .num{font-weight:900;color:var(--accent);font-size:1.45rem}
+    .time-card .lbl{font-size:0.82rem;color:var(--muted);margin-top:6px;font-weight:700}
+    .home-title{font-family:"Pacifico",cursive;color:var(--accent);font-size:1.75rem;text-align:center;margin-top:14px;}
+    .home-sub{text-align:center;color:var(--muted);margin-top:10px;line-height:1.45;font-weight:600}
+
+    .timeline-grid{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:18px}
+    .month-card{
+      width:46%;min-width:152px;
+      background: rgba(255,255,255,0.72);border: 1px solid rgba(255,255,255,0.70);
+      padding:12px;border-radius:16px;text-align:center;color:#ff2f79;font-weight:900;
+      box-shadow: var(--shadow);
+      transition: transform var(--trans-fast), background var(--trans-fast), box-shadow var(--trans-fast), color var(--trans-fast);
+      cursor:pointer;position:relative;overflow:hidden;
+      backdrop-filter: blur(10px);-webkit-backdrop-filter: blur(10px);
+    }
+    .month-card::after{
+      content:"";position:absolute; inset:0;
+      background: radial-gradient(200px 120px at 20% 0%, rgba(255,183,197,0.40), transparent 60%),
+                  radial-gradient(220px 140px at 100% 70%, rgba(230,217,255,0.48), transparent 60%);
+      opacity:.75;pointer-events:none;
+    }
+    .month-card > *{position:relative; z-index:1;}
+    .month-card small{display:block;color: var(--muted);margin-top:6px;opacity: 0.98;font-weight:800;}
+    .month-card:hover{transform: translateY(-6px) scale(1.015);background: linear-gradient(180deg, rgba(255,255,255,0.78), rgba(255,227,235,0.78));box-shadow: 0 18px 48px rgba(255,79,139,0.16);color: var(--accent);}
+    .month-card:active{transform: translateY(-2px) scale(1.005);}
+    .month-card:focus-visible{outline:none; box-shadow: var(--shadow), var(--focus);}
+
+    .section{
+      position:fixed; inset:0;padding:calc(var(--pad)*1.2);
+      display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+      background:
+        radial-gradient(900px 520px at 50% 10%, rgba(255,227,235,0.52), transparent 62%),
+        linear-gradient(180deg, rgba(255,255,255,0.86), rgba(232,219,255,0.06));
+      transition: transform var(--trans-med) cubic-bezier(.2,.9,.25,1), opacity var(--trans-med);
+      z-index:110;pointer-events:auto;
+      overflow-y: auto;
+    }
+    .section.hidden{transform:translateX(100vw);opacity:0;pointer-events:none}
+    .section.exiting{transform:translateX(-40vw);opacity:0;pointer-events:none}
+    .section.active{transform:translateX(0);opacity:1;pointer-events:auto}
+
+    .section h3{font-family:"Pacifico",cursive;color:var(--accent);font-size:1.7rem;margin:4px 0;text-align:center;text-shadow: 0 10px 22px rgba(255,79,139,0.16);}
+
+    .detail-img{
+      width:88%;max-width:520px;border-radius:22px;
+      box-shadow: 0 26px 64px rgba(33, 10, 62, 0.14);
+      filter: saturate(1.03) contrast(1.02);border: 1px solid rgba(255,255,255,0.70);
+    }
+
+    .detail-text{
+      width:92%;max-width:560px;
+      background: var(--glass-strong);border: 1px solid var(--glass-border);
+      padding:14px 14px;border-radius:16px;color:var(--muted);line-height:1.55;
+      box-shadow: var(--shadow);text-align:left;
+      backdrop-filter: blur(14px);-webkit-backdrop-filter: blur(14px);
+    }
+    .detail-text strong{color:#ff2f79}
+
+    .nav-row{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;justify-content:center}
+    .nav-row .btn{padding:10px 16px;border-radius:999px}
+    .chev{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);font-size:0.9rem;color:var(--muted);font-weight:700}
+
+    .success-overlay{
+      position:absolute;inset:0;background: linear-gradient(135deg, rgba(255,255,255,0.94), rgba(255,241,242,0.70));
+      display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;padding:18px;
+      border-radius:16px;z-index:9999;border: 1px solid rgba(255,255,255,0.70);
+      backdrop-filter: blur(10px);-webkit-backdrop-filter: blur(10px);
+    }
+    .success-title{font-family:"Pacifico",cursive;color:var(--accent);font-size:1.55rem;text-align:center}
+    .success-sub{color:var(--muted);text-align:center;font-weight:700;line-height:1.4}
+
+    #hearts{position:fixed;left:0;right:0;bottom:-40px;height:0;pointer-events:none;z-index:130}
+    .mini-heart{position:absolute;width:14px;height:14px;background:var(--accent);transform:rotate(45deg);opacity:0.95;border-radius:2px;filter: drop-shadow(0 10px 18px rgba(204, 0, 255, 0.2));}
+    .mini-heart:before,.mini-heart:after{content:"";position:absolute;width:14px;height:14px;border-radius:50%;background:var(--accent)}
+    .mini-heart:before{left:-7px;top:0}
+    .mini-heart:after{left:0;top:-7px}
+    @keyframes heartFloat{0%{transform:translateY(0) rotate(45deg);opacity:1}100%{transform:translateY(-760px) rotate(45deg);opacity:0}}
+    #confettiCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:240}
+
+    @keyframes shake{0%{transform:translateX(0)}16%{transform:translateX(-8px)}33%{transform:translateX(7px)}50%{transform:translateX(-6px)}66%{transform:translateX(5px)}83%{transform:translateX(-3px)}100%{transform:translateX(0)}}
+
+    .vs-hud{width:100%;max-width:520px;display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:6px;flex-wrap:wrap;}
+    .vs-pill{background: rgb(255, 228, 241);border: 1px solid rgba(255,255,255,0.65);box-shadow: var(--shadow);border-radius: 999px;padding: 8px 12px;color: var(--muted);font-weight: 900;backdrop-filter: blur(14px);-webkit-backdrop-filter: blur(14px);}
+    .vs-score{display:flex;align-items:center;gap:8px;padding: 8px 12px;border-radius: 999px;background: rgba(255,255,255,0.60);border: 1px solid rgba(255,255,255,0.60);box-shadow: var(--shadow);backdrop-filter: blur(14px);-webkit-backdrop-filter: blur(14px);}
+    .vs-score-label{color: var(--muted);font-weight: 900;font-size: 0.9rem;}
+    .vs-score-num{color: var(--accent);font-weight: 900;min-width: 18px;text-align:center;}
+    .vs-score-sep{color: var(--muted);font-weight: 900;}
+    .vs-arena{width:100%;max-width:520px;margin-top:10px;display:grid;grid-template-columns: 1fr auto 1fr;gap:12px;align-items:center;}
+    .vs-badge{width:54px;height:54px;border-radius: 999px;display:flex;align-items:center;justify-content:center;font-weight: 900;color: #fff;background: linear-gradient(180deg, var(--accent), #ff2f79);box-shadow: var(--shadow-strong);letter-spacing: 1px;user-select:none;}
+    .vs-card{border: 0;padding: 8px;border-radius: 18px;background: var(--glass);border: 1px solid var(--glass-border);box-shadow: var(--shadow);cursor:pointer;backdrop-filter: blur(14px);-webkit-backdrop-filter: blur(14px);transition: transform var(--trans-fast), box-shadow var(--trans-fast), filter var(--trans-fast);text-align:left;overflow:hidden;}
+    .vs-card:hover{transform: translateY(-5px);box-shadow: 0 20px 46px rgba(35, 10, 60, 0.16);}
+    .vs-card:active{ transform: translateY(-2px); }
+    .vs-card:focus-visible{ outline:none; box-shadow: var(--shadow), var(--focus); }
+    .vs-card img{width:100%;height: 180px;object-fit: cover;border-radius: 14px;display:block;border: 1px solid rgba(255,255,255,0.55);}
+    .vs-name{margin-top:8px;font-weight: 900;color: var(--accent);font-size: 1.05rem;}
+    .vs-tag{margin-top:4px;font-weight: 800;color: var(--muted);font-size: 0.85rem;}
+    .vs-card.shake{ animation: shake .6s ease; }
+    .vs-card.blocked{ pointer-events:none; opacity:0.55; filter: grayscale(0.15); }
+
+    @media(min-width:540px){ .month-card{width:31%} }
+    @media(min-width:900px){body{overflow:auto}#home{padding:28px}.section{padding:28px}}
+    @media (max-width: 390px){.vs-arena{ grid-template-columns: 1fr; }.vs-badge{ margin: 0 auto; }.vs-card img{ height: 160px; }}
+    @media (max-width: 768px) and (hover: none){.time-card,.icon-btn,.detail-text,.vs-card,.vs-pill,.vs-score{backdrop-filter: blur(10px);-webkit-backdrop-filter: blur(10px);}}
+    @media (prefers-reduced-motion: reduce){*{transition:none !important; animation:none !important;}}
+
+@keyframes fadeInUp {from { opacity: 0; transform: translateY(25px); }to { opacity: 1; transform: translateY(0); }}
+@keyframes floatHeart {0% {transform: translateY(0) scale(1) rotate(45deg);opacity: 1;background: var(--accent);}50% {background: var(--accent-2);}100% {transform: translateY(-110vh) scale(1.1) rotate(45deg);opacity: 0;background: var(--ivory);}}
+#splash .container {animation: fadeInUp 1.6s ease-out forwards;}
+.splash-heart {position: absolute;width: 14px;height: 14px;background: var(--accent);transform: rotate(45deg);border-radius: 2px;opacity: 0.8;animation: floatHeart 8s linear infinite;filter: drop-shadow(0 6px 12px rgba(255,79,139,0.25));}
+.splash-heart::before,.splash-heart::after {content: "";position: absolute;width: 14px;height: 14px;border-radius: 50%;background: inherit;}
+.splash-heart::before { left: -7px; top: 0; }
+.splash-heart::after { left: 0; top: -7px; }
+#splash .title {font-size: 2.6rem;margin-bottom: 12px;text-shadow: 0 10px 24px rgba(255,79,139,0.22);}
+#splash .lead { font-size: 1rem; margin-bottom: 14px; opacity: 0.95; }
+#splash .note { font-size: 0.9rem; opacity: 0.9; }
+@media (max-width: 480px) {#splash .title { font-size: 2rem; }#splash .lead { font-size: 0.95rem; }}
+
+.update-heart-emoji {position: fixed;right: 75%;transform: translateX(180%);bottom: 700px;display: flex;align-items: center;gap: 10px;cursor: pointer;z-index: 300;animation: gentleFloat 3s ease-in-out infinite;}
+.heart-icon {font-size: 2.6rem;animation: gentleBeat 1.8s infinite ease-in-out;filter: drop-shadow(0 0 10px rgba(255,79,139,0.5)) drop-shadow(0 0 20px rgba(181,138,242,0.4));}
+.heart-text-bubble {background: linear-gradient(135deg, #ff9ec9, #b58af2);color: #fff;font-weight: 800;font-size: 0.9rem;border-radius: 20px;padding: 6px 14px;letter-spacing: 0.4px;box-shadow: 0 0 10px rgba(255,183,197,0.45), 0 0 18px rgba(181,138,242,0.35);text-shadow: 0 0 8px rgba(255,255,255,0.6);pointer-events: none;animation: floatBubble 3.5s ease-in-out infinite;}
+@keyframes gentleBeat {0%, 100% { transform: scale(1); }50% { transform: scale(1.15); }}
+@keyframes floatBubble {0%, 100% { transform: translateY(0); opacity: 1; }50% { transform: translateY(-6px); opacity: 0.95; }}
+@keyframes gentleFloat {0%, 100% { transform: translateX(180%) translateY(0); }50% { transform: translateX(180%) translateY(-6px); }}
+
+.video-full {position: fixed;inset: 0;background: rgba(0,0,0,0.9);display: none;justify-content: center;align-items: center;z-index: 9999;}
+.video-full video {width: 90vw;height: auto;max-height: 90vh;border-radius: 10px;}
+.video-full.show {display: flex;}
+
+/* ========================================
+   MONTH 14 — Golden Autumn
+   (full rewrite — delete old m14 CSS first)
+   ======================================== */
+
+/* Yellow overlay sits on top of the pink section background
+   and fades in slowly — this gives the pink-to-yellow transition */
+.m14-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 8s ease 0.6s;
+  background:
+    radial-gradient(ellipse at   0%   0%, rgba(120, 80,  0, 0.22), transparent 40%),
+    radial-gradient(ellipse at 100%   0%, rgba(120, 80,  0, 0.22), transparent 40%),
+    radial-gradient(ellipse at   0% 100%, rgba(140, 96,  0, 0.26), transparent 40%),
+    radial-gradient(ellipse at 100% 100%, rgba(140, 96,  0, 0.26), transparent 40%),
+    linear-gradient(150deg, #fffde8 0%, #f5d870 46%, #e5b224 100%);
+}
+#month-14.active .m14-overlay {
+  opacity: 1;
+}
+
+/* All real content floats above the overlay */
+#month-14 > *:not(.m14-overlay):not(.m14-branch-l):not(.m14-branch-r):not(.m14-sunflower) {
+  position: relative;
+  z-index: 2;
+}
+
+/* ---- Leaves — position:fixed, appended to body by JS ---- */
+.m14-leaf {
+  position: fixed;
+  top: -60px;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0;
+  font-size: 1.3rem;
+  animation: m14LeafFall linear forwards;
+}
+@keyframes m14LeafFall {
+  0%   { opacity: 0.85; transform: translateY(0)     translateX(0px)   rotate(0deg);   }
+  20%  {                transform: translateY(14vh)  translateX(28px)  rotate(44deg);  }
+  40%  {                transform: translateY(30vh)  translateX(-18px) rotate(92deg);  }
+  60%  {                transform: translateY(52vh)  translateX(22px)  rotate(144deg); opacity: 0.7; }
+  80%  {                transform: translateY(74vh)  translateX(-14px) rotate(196deg); }
+  100% { opacity: 0;    transform: translateY(108vh) translateX(8px)   rotate(262deg); }
+}
+
+/* ---- Branches (top corners) ---- */
+.m14-branch-l,
+.m14-branch-r {
+  position: absolute;
+  top: 0;
+  width: 195px;
+  height: 165px;
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.8s ease 5.5s;
+}
+.m14-branch-l { left: 0; }
+.m14-branch-r { right: 0; transform: scaleX(-1); }
+
+#month-14.active .m14-branch-l,
+#month-14.active .m14-branch-r {
+  opacity: 1;
+}
+
+/* Branch line drawing */
+.m14-br-main { stroke-dasharray: 310; stroke-dashoffset: 310; }
+.m14-br-s1   { stroke-dasharray: 135; stroke-dashoffset: 135; }
+.m14-br-s2   { stroke-dasharray: 115; stroke-dashoffset: 115; }
+
+#month-14.active .m14-br-main { animation: m14Dash 2.2s ease 5.5s forwards; }
+#month-14.active .m14-br-s1   { animation: m14Dash 1.5s ease 7.0s forwards; }
+#month-14.active .m14-br-s2   { animation: m14Dash 1.2s ease 7.6s forwards; }
+
+@keyframes m14Dash { to { stroke-dashoffset: 0; } }
+
+/* Blossoms on branches — individual classes to avoid selector bugs */
+.m14-bl {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(0);
+  opacity: 0;
+}
+#month-14.active .m14-bl1 { animation: m14Pop 0.65s ease 7.4s forwards; }
+#month-14.active .m14-bl2 { animation: m14Pop 0.65s ease 7.7s forwards; }
+#month-14.active .m14-bl3 { animation: m14Pop 0.65s ease 8.0s forwards; }
+#month-14.active .m14-bl4 { animation: m14Pop 0.65s ease 8.3s forwards; }
+
+@keyframes m14Pop {
+  0%   { transform: scale(0);    opacity: 0; }
+  68%  { transform: scale(1.25); opacity: 1; }
+  100% { transform: scale(1);    opacity: 1; }
+}
+
+/* ---- ONE sunflower — right side only ---- */
+.m14-sunflower {
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+  width: 68px;
+  height: 345px;
+  pointer-events: none;
+  z-index: 3;
+  overflow: visible;
+}
+
+/* Stem grows upward */
+.m14-sf-stem {
+  stroke-dasharray: 390;
+  stroke-dashoffset: 390;
+}
+#month-14.active .m14-sf-stem {
+  animation: m14Dash 3.8s cubic-bezier(0.28, 0, 0.18, 1) 0.8s forwards;
+}
+
+/* Leaves unfurl */
+.m14-sf-leaf1 {
+  transform-box: fill-box;
+  transform-origin: right center;
+  transform: scale(0);
+  opacity: 0;
+}
+.m14-sf-leaf2 {
+  transform-box: fill-box;
+  transform-origin: left center;
+  transform: scale(0);
+  opacity: 0;
+}
+#month-14.active .m14-sf-leaf1 {
+  animation: m14LeafGrow 1.4s ease 4.0s forwards;
+}
+#month-14.active .m14-sf-leaf2 {
+  animation: m14LeafGrow 1.4s ease 4.9s forwards;
+}
+@keyframes m14LeafGrow {
+  0%   { transform: scale(0);    opacity: 0; }
+  62%  { transform: scale(1.12); opacity: 1; }
+  100% { transform: scale(1);    opacity: 1; }
+}
+
+/* Flower blooms */
+.m14-sf-bloom {
+  transform-box: fill-box;
+  transform-origin: center center;
+  transform: scale(0) rotate(-18deg);
+  opacity: 0;
+}
+#month-14.active .m14-sf-bloom {
+  animation: m14Bloom 2s cubic-bezier(0.175, 0.885, 0.32, 1.15) 6.0s forwards;
+}
+@keyframes m14Bloom {
+  0%   { transform: scale(0)    rotate(-18deg); opacity: 0; }
+  58%  { transform: scale(1.08) rotate(4deg);  opacity: 1; }
+  100% { transform: scale(1)    rotate(0deg);  opacity: 1; }
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <h1 class="visually-hidden">Happy 1st Anniversary</h1>
+
+  <div class="top-controls" role="toolbar" aria-label="Top controls">
+    <button id="musicToggle" class="icon-btn" title="Play / Pause background music" aria-label="Play or pause background music">
+      <svg id="musicIcon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+    </button>
+    <button id="muteBgBtn" class="icon-btn" title="Mute/unmute background music" aria-label="Mute or unmute background music">
+      <svg id="muteIcon" viewBox="0 0 24 24"><path d="M7 9v6h4l5 5V4l-5 5H7z"/></svg>
+    </button>
+    <button id="homeQuick" class="icon-btn" title="Go home" aria-label="Home">
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+    </button>
+    <button id="shareBtn" class="icon-btn" title="Share" aria-label="Share">
+      <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7a3.35 3.35 0 0 0 0-1.39l7.05-4.11A2.99 2.99 0 1 0 15 5a2.99 2.99 0 0 0 .91 2.11l-7.05 4.11a3 3 0 1 0 0 4.56l7.05 4.1c-.13.44-.13.9 0 1.34.54-.34 1.2-.52 1.9-.52 1.66 0 3 1.34 3 3h2c0-2.76-2.24-5-5-5z"/></svg>
+    </button>
+  </div>
+
+  <main id="splash" role="main" aria-label="Welcome">
+    <div class="container">
+      <div class="title">Happy 1st Anniversary</div>
+      <div style="height:10px"></div>
+      <div class="lead">Since <strong>30 December 2024</strong></div>
+      <div class="enter-row">
+        <button id="enterBtn" class="btn" aria-label="Begin our journey">Begin Our Journey</button>
+        <button id="previewBtn" class="btn secondary" aria-label="Preview timeline">Preview Timeline</button>
+      </div>
+      <div class="note">Best on mobile. Tap Begin, then explore months or play the VS game.</div>
+    </div>
+    <div id="splashHearts" aria-hidden="true"></div>
+  </main>
+
+  <div id="home" role="region" aria-label="Home" style="display:none">
+    <div class="home-inner container">
+      <div class="count-row" aria-hidden="false">
+        <div class="time-card"><div class="num" id="days">0</div><div class="lbl">Days</div></div>
+        <div class="time-card"><div class="num" id="hours">00</div><div class="lbl">Hours</div></div>
+        <div class="time-card"><div class="num" id="minutes">00</div><div class="lbl">Minutes</div></div>
+        <div class="time-card"><div class="num" id="seconds">00</div><div class="lbl">Seconds</div></div>
+        <div class="video-full" id="videoFull" style="isolation: isolate;">
+          <video id="updateVideo" src="public/video/somethingsomething.mp4" controls autoplay muted loop></video>
+        </div>
+      </div>
+      <h2 class="home-title">Our Journey</h2>
+      <p class="home-sub">Tap a month to relive it, or play the VS game to see who wins.</p>
+      <div class="timeline-grid" id="timelineGrid" aria-label="Timeline months">
+        <div style="width:100%;text-align:center;font-family:'Pacifico',cursive;color:var(--accent);font-size:1.3rem;margin-bottom:4px;">2025</div>
+        <div class="month-card" data-target="month-1">Month 1 <small>Our start</small></div>
+        <div class="month-card" data-target="month-2">Month 2 <small>Late calls</small></div>
+        <div class="month-card" data-target="month-3">Month 3 <small>Cozy fights</small></div>
+        <div class="month-card" data-target="month-4">Month 4 <small>Growing up</small></div>
+        <div class="month-card" data-target="month-5">Month 5 <small>Surprises</small></div>
+        <div class="month-card" data-target="month-6">Month 6 <small>Half-year</small></div>
+        <div class="month-card" data-target="month-7">Month 7 <small>Closer</small></div>
+        <div class="month-card" data-target="month-8">Month 8 <small>Trips</small></div>
+        <div class="month-card" data-target="month-9">Month 9 <small>Comfort</small></div>
+        <div class="month-card" data-target="month-10">Month 10 <small>Countdown</small></div>
+        <div class="month-card" data-target="month-11">Month 11 <small>Monthiversary</small></div>
+        <div class="month-card" data-target="month-12">Month 12 <small>One year</small></div>
+
+        <div style="width:100%;
+        text-align:center;
+        font-family:'Pacifico',cursive;
+        color:var(--accent);
+        font-size:1.3rem;
+        margin-top:8px;
+        margin-bottom:4px;">2026</div>
+        <div class="month-card" data-target="month-13">Month 13 <small>New Beginnings</small></div>
+        <div class="month-card" data-target="month-14">Month 14 <small>Our 2nd Valentine's</small></div>
+
+        <div class="month-card" data-target="game">Play: VS Game <small>Best person</small></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="month-1" class="section hidden" aria-label="Month 1">
+    <h3>Month 1 — The Beginning</h3>
+    <div class="img-wrap">
+      <img class="detail-img" src="public/img/month1.jpeg" alt="Month 1 image" loading="lazy">
+      <div class="ribbon">30 Dec 2024</div>
+    </div>
+    <div class="detail-text"><p><strong>When we said YES</strong> The night when time disappeared. Ordinary moments started feeling special.</p></div>
+    <div class="nav-row">
+      <button class="btn" data-goto="home">Home</button>
+      <button class="btn" data-next="month-2">Next</button>
+    </div>
+  </section>
+
+  <section id="month-2" class="section hidden" aria-label="Month 2">
+    <h3>Month 2 — First Birthdays</h3>
+    <div class="img-wrap">
+      <img class="detail-img" src="public/img/month2.jpeg" alt="Month 2 image" loading="lazy">
+      <div class="ribbon">11 Jan 2025</div>
+    </div>
+    <div class="detail-text"><p>The bestest gifts were recieved — the "us" started taking shape.</p></div>
+    <div class="nav-row">
+      <button class="btn" data-goto="month-1">Back</button>
+      <button class="btn" data-next="month-3">Next</button>
+    </div>
+  </section>
+
+  <section id="month-3" class="section hidden" aria-label="Month 3">
+    <h3>Month 3 — OUR BEST DATE (YET)</h3>
+    <div class="img-wrap">
+      <img class="detail-img" src="public/img/month3.jpeg" alt="Month 3 image" loading="lazy">
+      <div class="ribbon">15 Feb 2025</div>
+    </div>
+    <div class="detail-text"><p>15Th Feb, Omg the bestt times, Cafeteria and Co. and Valentine's wali chocolate (and ofc the best stairs wali photo)</p></div>
+    <div class="nav-row">
+      <button class="btn" data-goto="month-2">Back</button>
+      <button class="btn" data-next="month-4">Next</button>
+    </div>
+  </section>
+
+  <section id="month-4" class="section hidden" aria-label="Month 4">
+    <h3>Month 4 — OMG 30th March</h3>
+    <div class="img-wrap">
+      <img class="detail-img" src="public/img/month4.jpeg" alt="Month 4 image" loading="lazy">
+      <div class="ribbon">30 Mar 2025</div>
+    </div>
+    <div class="detail-text"><p>ANDDD its her 20th birthday, and we celebrate our first night</p></div>
+    <div class="nav-row">
+      <button class="btn" data-goto="month-3">Back</button>
+      <button class="btn" data-next="month-5">Next</button>
+    </div>
+  </section>
+
+  <section id="month-5" class="section hidden" aria-label="Month 5">
+    <h3>Month 5 — My Bestest Metro ride</h3>
+    <div class="img-wrap">
+      <img class="detail-img" src="public/img/month5.jpeg" alt="Month 5 image" loading="lazy">
+      <div class="ribbon">14 May 2025</div>
+    </div>
+    <div class="detail-text"><p>Notes, tiny gifts, and sweet reminders that someone is thinking of you. (with GotTea wali polaroids hehe)</p></div>
+    <div class="nav-row">
+      <button class="btn" data-goto="month-4">Back</button>
+      <button class="btn" data-next="month-6">Next</button>
+    </div>
+  </section>
+
+  <section id="month-6" class="section hidden" aria-label="Month 6">
+    <h3>Month 6 — Halfway Hearts</h3>
+    <div class="img-wrap">
+      <img class="detail-img" src="public/img/month6.jpeg" alt="Month 6 image" loading="lazy">
+      <div class="ribbon">22 Jun 2025</div>
+    </div>
+    <div class="detail-text"><p>Meeting for the first time after Long Distance. Half a year down — and still that same excitement.</p></div>
+    <div class="nav-row">
+      <button class="btn" data-goto="month-5">Back</button>
+      <button class="btn" data-next="month-7">Next</button>
+    </div>
+  </section>
+
+  <section id="month-7" class="section hidden" aria-label="Month 7">
+    <h3>Month 7 — The Unbeatable Udaipur Trip</h3>
+    <div class="img-wrap">
+      <img class="detail-img" src="public/img/month7.jpeg" alt="Month 7 image" loading="lazy">
+      <div class="ribbon">3 Jul 2025</div>
+    </div>
+    <div class="detail-text"><p>Comfort became a habit. Somehow pulled off this trip with more fellows.</p></div>
+    <div class="nav-row">
+      <button class="btn" data-goto="month-6">Back</button>
+      <button class="btn" data-next="month-8">Next</button>
+    </div>
+  </section>
+
+  <section id="month-8" class="section hidden" aria-label="Month 8">
+    <h3>Month 8 — Online Relationship Times</h3>
+    <div class="img-wrap">
+      <img class="detail-img" src="public/img/month8.jpeg" alt="Month 8 image" loading="lazy">
+      <div class="ribbon">sometime in Aug</div>
+    </div>
+    <div class="detail-text"><p>Plans, promises & memories waiting to happen.</p></div>
+    <div class="nav-row">
+      <button class="btn" data-goto="month-7">Back</button>
+      <button class="btn" data-next="month-9">Next</button>
+    </div>
+  </section>
+
+  <section id="month-9" class="section hidden" aria-label="Month 9">
+    <h3>Month 9 — 1st Semi-Anniversary</h3>
+    <div class="img-wrap">
+      <img class="detail-img" src="public/img/month9.jpeg" alt="Month 9 image" loading="lazy">
+      <div class="ribbon">29 Sept 2025</div>
+    </div>
+    <div class="detail-text"><p>Some fights, some make-ups and complete LOVE.</p></div>
+    <div class="nav-row">
+      <button class="btn" data-goto="month-8">Back</button>
+      <button class="btn" data-next="month-10">Next</button>
+    </div>
+  </section>
+
+  <section id="month-10" class="section hidden" aria-label="Month 10">
+    <h3>Month 10 — Funsiess and Smilies</h3>
+    <div class="img-wrap">
+      <img class="detail-img" src="public/img/month10.jpeg" alt="Month 10 image" loading="lazy">
+      <div class="ribbon">sometime in Oct</div>
+    </div>
+    <div class="detail-text"><p>"AYE - Raghav bro" enters the chat. CHAL CHAL CHAL group expands...</p></div>
+    <div class="nav-row">
+      <button class="btn" data-goto="month-9">Back</button>
+      <button class="btn" data-next="month-11">Next</button>
+    </div>
+  </section>
+
+  <section id="month-11" class="section hidden" aria-label="Month 11">
+    <h3>Month 11 — Final Countdown</h3>
+    <div class="img-wrap">
+      <img class="detail-img" src="public/img/month11.jpeg" alt="Month 11 image" loading="lazy">
+      <div class="ribbon">2 Nov 2025</div>
+    </div>
+    <div class="detail-text"><p>Some tests. Butterflies waiting to fly high again.</p></div>
+    <div class="nav-row">
+      <button class="btn" data-goto="month-10">Back</button>
+      <button class="btn" data-next="month-12">Next</button>
+    </div>
+  </section>
+
+  <section id="month-12" class="section hidden" aria-label="Month 12">
+    <h3>Month 12 — 365 DAYS</h3>
+    <div class="img-wrap">
+      <img class="detail-img" src="public/img/month12.jpeg" alt="Month 12 image" loading="lazy">
+      <div class="ribbon">13 Dec 2025</div>
+    </div>
+    <div class="detail-text"><p>One year, a thousand memories and still, it feels like the very beginning of forever✨</p></div>
+    <div class="nav-row">
+      <button class="btn" data-goto="month-11">Back</button>
+      <button class="btn" data-next="month-13">Next</button>
+    </div>
+    <div class="chev">Tip: swipe left/right to go next/back</div>
+  </section>
+
+    <!-- ✅ MONTH 13 — Two photos side by side with individual date ribbons -->
+  <section id="month-13" class="section hidden" aria-label="Month 13">
+    <h3>Month 13 — New Beginnings</h3>
+       <div class="img-pair">
+          <div class="img-wrap">
+        <img class="detail-img" src="public/img/month13b.jpeg" alt="Month 13 first photo" loading="lazy">
+        <div class="ribbon">23 Jan 2026</div>
+      </div>
+      <div class="img-wrap">
+        <img class="detail-img" src="public/img/month13.jpeg" alt="Month 13 second photo" loading="lazy">
+        <div class="ribbon">24 Jan 2026</div>
+      </div>
+    </div>
+    <div class="detail-text"><p>The start of our second year — stronger, happier, and even more us 💖.</p></div>
+    <div class="nav-row">
+      <button class="btn" data-goto="month-12">Back</button>
+      <button class="btn" data-next="month-14">Next</button>
+    </div>
+    <div class="chev">Tip: swipe left/right to go next/back</div>
+  </section>
+  
+
+<section id="month-14" class="section hidden" aria-label="Month 14">
+  <!-- Pink-to-yellow overlay -->
+<div class="m14-overlay" aria-hidden="true"></div>
+
+<!-- Branch — top left corner -->
+<svg class="m14-branch-l" viewBox="0 0 195 165"
+     xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path class="m14-br-main"
+        d="M0,0 C42,32 68,82 72,165"
+        stroke="#7a5c1e" stroke-width="5"
+        fill="none" stroke-linecap="round"/>
+  <path class="m14-br-s1"
+        d="M32,46 C66,24 94,7 112,0"
+        stroke="#8a6812" stroke-width="3.2"
+        fill="none" stroke-linecap="round"/>
+  <path class="m14-br-s2"
+        d="M54,88 C30,66 11,50 0,44"
+        stroke="#8a6812" stroke-width="2.8"
+        fill="none" stroke-linecap="round"/>
+  <circle class="m14-bl m14-bl1" cx="112" cy="0"  r="8"   fill="#d4b01a"/>
+  <circle class="m14-bl m14-bl2" cx="98"  cy="10" r="5.5" fill="#e8c82a"/>
+  <circle class="m14-bl m14-bl3" cx="0"   cy="44" r="7"   fill="#c4a018"/>
+  <circle class="m14-bl m14-bl4" cx="13"  cy="34" r="4.5" fill="#dcc028"/>
+</svg>
+
+<!-- Branch — top right corner (mirrored by CSS) -->
+<svg class="m14-branch-r" viewBox="0 0 195 165"
+     xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path class="m14-br-main"
+        d="M0,0 C42,32 68,82 72,165"
+        stroke="#7a5c1e" stroke-width="5"
+        fill="none" stroke-linecap="round"/>
+  <path class="m14-br-s1"
+        d="M32,46 C66,24 94,7 112,0"
+        stroke="#8a6812" stroke-width="3.2"
+        fill="none" stroke-linecap="round"/>
+  <path class="m14-br-s2"
+        d="M54,88 C30,66 11,50 0,44"
+        stroke="#8a6812" stroke-width="2.8"
+        fill="none" stroke-linecap="round"/>
+  <circle class="m14-bl m14-bl1" cx="112" cy="0"  r="8"   fill="#d4b01a"/>
+  <circle class="m14-bl m14-bl2" cx="98"  cy="10" r="5.5" fill="#e8c82a"/>
+  <circle class="m14-bl m14-bl3" cx="0"   cy="44" r="7"   fill="#c4a018"/>
+  <circle class="m14-bl m14-bl4" cx="13"  cy="34" r="4.5" fill="#dcc028"/>
+</svg>
+
+<!-- Single sunflower — right side, grows from the ground -->
+<svg class="m14-sunflower" viewBox="0 0 68 345"
+     xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+
+  <!-- Stem -->
+  <path class="m14-sf-stem"
+        d="M34,345 C32,285 30,222 34,168 C36,132 32,88 34,28"
+        stroke="#487600" stroke-width="6.5"
+        fill="none" stroke-linecap="round"/>
+
+  <!-- Left leaf -->
+  <ellipse class="m14-sf-leaf1"
+           cx="19" cy="242" rx="27" ry="9.5"
+           fill="#548800"
+           transform="rotate(-42, 19, 242)"/>
+
+  <!-- Right leaf -->
+  <ellipse class="m14-sf-leaf2"
+           cx="49" cy="178" rx="27" ry="9.5"
+           fill="#548800"
+           transform="rotate(42, 49, 178)"/>
+
+  <!-- Flower head -->
+  <g class="m14-sf-bloom" transform="translate(34, 28)">
+    <!-- 12 petals alternating two shades -->
+    <ellipse rx="7.5" ry="18" fill="#c89600" transform="rotate(0)   translate(0,-26)"/>
+    <ellipse rx="7.5" ry="18" fill="#b48400" transform="rotate(30)  translate(0,-26)"/>
+    <ellipse rx="7.5" ry="18" fill="#c89600" transform="rotate(60)  translate(0,-26)"/>
+    <ellipse rx="7.5" ry="18" fill="#b48400" transform="rotate(90)  translate(0,-26)"/>
+    <ellipse rx="7.5" ry="18" fill="#c89600" transform="rotate(120) translate(0,-26)"/>
+    <ellipse rx="7.5" ry="18" fill="#b48400" transform="rotate(150) translate(0,-26)"/>
+    <ellipse rx="7.5" ry="18" fill="#c89600" transform="rotate(180) translate(0,-26)"/>
+    <ellipse rx="7.5" ry="18" fill="#b48400" transform="rotate(210) translate(0,-26)"/>
+    <ellipse rx="7.5" ry="18" fill="#c89600" transform="rotate(240) translate(0,-26)"/>
+    <ellipse rx="7.5" ry="18" fill="#b48400" transform="rotate(270) translate(0,-26)"/>
+    <ellipse rx="7.5" ry="18" fill="#c89600" transform="rotate(300) translate(0,-26)"/>
+    <ellipse rx="7.5" ry="18" fill="#b48400" transform="rotate(330) translate(0,-26)"/>
+    <!-- Dark centre -->
+    <circle r="19" fill="#3a1c00"/>
+    <circle r="13" fill="#4c2606"/>
+    <!-- Seed pattern -->
+    <circle cx=" 0"  cy="-6" r="1.9" fill="#261000"/>
+    <circle cx=" 5"  cy="-3" r="1.9" fill="#261000"/>
+    <circle cx=" 5"  cy=" 3" r="1.9" fill="#261000"/>
+    <circle cx=" 0"  cy=" 6" r="1.9" fill="#261000"/>
+    <circle cx="-5"  cy=" 3" r="1.9" fill="#261000"/>
+    <circle cx="-5"  cy="-3" r="1.9" fill="#261000"/>
+   
+  </g>
+</svg>
+
+
+
+    <h3>Month 14 — Our 2nd Valentine's</h3>
+    <div class="img-wrap">
+      <img class="detail-img" src="public/img/month14.jpeg" alt="Month 14 image" loading="lazy">
+      <div class="ribbon">14 Feb 2026</div>
+    </div>
+   <div class="detail-text">
+      <p>Sundaisyyy reunites for this auspicious day once again. [online verion]</p>
+    </div>
+    <div class="nav-row">
+      <button class="btn" data-goto="month-13">Back</button>
+      <button id="finalCelebrate" class="btn">Celebrate</button>
+    </div>
+    <div class="chev">Tip: swipe left/right to go next/back</div>
+  </section>
+
+
+   
+
+  <section id="game" class="section hidden" aria-label="Best Person Game">
+    <h3>Best Person in the World Competition</h3>
+    <div class="detail-text" style="max-width:460px;text-align:center">
+      <p>Level-based VS game: choose who wins this round.</p>
+      <p><strong>Rule:</strong> there is only one "best person".</p>
+    </div>
+    <div class="vs-hud" aria-label="Game status">
+      <div class="vs-pill" id="levelPill">Level 1 / 5</div>
+      <div class="vs-score" aria-label="Score">
+        <span class="vs-score-label">Her</span>
+        <span class="vs-score-num" id="scoreHer">0</span>
+        <span class="vs-score-sep">:</span>
+        <span class="vs-score-num" id="scoreThem">0</span>
+        <span class="vs-score-label">Them</span>
+      </div>
+    </div>
+    <div class="vs-arena" aria-label="Versus choices">
+      <button id="vsLeft" class="vs-card" type="button" aria-label="Choose left">
+        <img id="vsLeftImg" alt="Left contestant" loading="lazy">
+        <div class="vs-name" id="vsLeftName">Loading...</div>
+        <div class="vs-tag" id="vsLeftTag">Tap to choose</div>
+      </button>
+      <div class="vs-badge" aria-hidden="true">VS</div>
+      <button id="vsRight" class="vs-card" type="button" aria-label="Choose right">
+        <img id="vsRightImg" alt="Right contestant" loading="lazy">
+        <div class="vs-name" id="vsRightName">Loading...</div>
+        <div class="vs-tag" id="vsRightTag">Tap to choose</div>
+      </button>
+    </div>
+    <div id="gameMsg" class="detail-text" style="margin-top:12px;max-width:460px;display:none;text-align:center"></div>
+    <div class="nav-row" style="margin-top:10px">
+      <button class="btn" data-goto="home">Home</button>
+    </div>
+  </section>
+
+  <div id="hearts" aria-hidden="true"></div>
+  <canvas id="confettiCanvas" aria-hidden="true"></canvas>
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <audio id="bgAudio" preload="auto" loop><source src="public/audio/beautiful.mp3" type="audio/mpeg"></audio>
+  <audio id="victoryAudio" preload="auto"><source src="public/audio/victory.mp3" type="audio/mpeg"></audio>
+  <audio id="wrongSfx" preload="auto"><source src="public/audio/quack.mp3" type="audio/ogg"></audio>
+  <audio id="celebrateAudio" preload="auto"><source src="public/audio/celebrate.mp3" type="audio/mpeg"></audio>
+
+  <script>
+    const splashHearts = document.getElementById('splashHearts');
+    if (splashHearts) {
+      function spawnSplashHeart() {
+        const h = document.createElement('div');
+        h.className = 'splash-heart';
+        h.style.left = Math.random() * 100 + 'vw';
+        h.style.animationDuration = 6 + Math.random() * 5 + 's';
+        h.style.opacity = (0.4 + Math.random() * 0.5).toString();
+        splashHearts.appendChild(h);
+        setTimeout(() => h.remove(), 10000);
+      }
+      setInterval(spawnSplashHeart, 800);
+    }
+
+    (() => {
+      'use strict';
+      const $ = sel => document.querySelector(sel);
+      const $$ = sel => Array.from(document.querySelectorAll(sel));
+
+      const splash = $('#splash');
+      const enterBtn = $('#enterBtn');
+      const previewBtn = $('#previewBtn');
+      const home = $('#home');
+      const monthCards = $$('.month-card');
+      const sections = $$('.section');
+      const timeEls = { days: $('#days'), hours: $('#hours'), minutes: $('#minutes'), seconds: $('#seconds') };
+      const musicToggle = $('#musicToggle');
+      const muteBgBtn = $('#muteBgBtn');
+      const musicIcon = $('#musicIcon');
+      const bgAudio = $('#bgAudio');
+      const victoryAudio = $('#victoryAudio');
+      const wrongSfx = $('#wrongSfx');
+      const winSfx = $('#winSfx');
+      const homeQuick = $('#homeQuick');
+      const shareBtn = $('#shareBtn');
+      const confettiCanvas = $('#confettiCanvas');
+      const heartsContainer = $('#hearts');
+      const finalCelebrate = $('#finalCelebrate');
+      const celebrateAudio = $('#celebrateAudio');
+      const toast = $('#toast');
+      const gameSection = $('#game');
+      const gameMsg = $('#gameMsg');
+
+      const REL_START = new Date('December 30, 2024 00:00:00').getTime();
+
+      let toastTimer = null;
+      function showToast(msg, ms=1600){
+        if (!toast) return;
+        toast.textContent = msg;
+        toast.classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toast.classList.remove('show'), ms);
+      }
+
+      function calcCountdown() {
+        const now = Date.now();
+        const diff = Math.max(0, now - REL_START);
+        const secs = Math.floor(diff / 1000);
+        const days = Math.floor(secs / 86400);
+        const hours = Math.floor((secs % 86400) / 3600);
+        const minutes = Math.floor((secs % 3600) / 60);
+        const seconds = secs % 60;
+        return { days, hours, minutes, seconds };
+      }
+
+      function updateCountdownUI() {
+        const c = calcCountdown();
+        timeEls.days.textContent = c.days;
+        timeEls.hours.textContent = String(c.hours).padStart(2, '0');
+        timeEls.minutes.textContent = String(c.minutes).padStart(2, '0');
+        timeEls.seconds.textContent = String(c.seconds).padStart(2, '0');
+      }
+
+      updateCountdownUI();
+      setInterval(updateCountdownUI, 1000);
+
+      sections.forEach(s => s.classList.add('hidden'));
+      sections.forEach(s => {
+        s.addEventListener('transitionend', () => {
+          if (s.classList.contains('exiting')) {
+            s.classList.remove('exiting', 'active');
+            s.classList.add('hidden');
+          }
+        });
+      });
+
+      function waitForExit() {
+        return new Promise(resolve => {
+          const active = sections.filter(s => s.classList.contains('active'));
+          if (!active.length) return resolve();
+          active.forEach(s => {
+            if (!s.classList.contains('exiting')) {
+              s.classList.add('exiting');
+              s.classList.remove('active');
+            }
+          });
+          setTimeout(resolve, 620);
+        });
+      }
+
+      async function showHome() {
+        await waitForExit();
+        home.style.display = 'flex';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      async function showSection(id) {
+        const target = document.getElementById(id);
+        if (!target) return;
+        if (home.style.display !== 'none') {
+          home.style.display = 'none';
+          await new Promise(r => setTimeout(r, 60));
+        }
+        await waitForExit();
+        target.classList.remove('hidden', 'exiting');
+        void target.offsetWidth;
+        target.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'auto' });
+      }
+
+      monthCards.forEach(card => {
+        card.addEventListener('click', () => { const to = card.dataset.target; if (to) showSection(to); });
+        card.tabIndex = 0;
+        card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); } });
+      });
+
+      document.body.addEventListener('click', ev => {
+  const b = ev.target.closest('button');
+  if (!b) return;
+  if (b.dataset.goto) {
+    if (b.dataset.goto === 'home') showHome();
+    else showSection(b.dataset.goto);
+  }
+  if (b.dataset.next) {
+    const from = document.getElementById('month-12');
+    if (b.dataset.next === 'month-13' && from && from.classList.contains('active')) {
+      playYearReveal(() => showSection('month-13'));
+    } else {
+      showSection(b.dataset.next);
+    }
+  }
+});
+
+      enterBtn.addEventListener('click', async () => {
+        splash.style.display = 'none';
+        home.style.display = 'flex';
+        try { if (localStorage.getItem('anniv_music') === '1') { await bgAudio.play().catch(()=>{}); } } catch(e){}
+      });
+
+      previewBtn.addEventListener('click', () => showSection('month-1'));
+      homeQuick.addEventListener('click', showHome);
+
+      function setMusicIcon(isPlaying) {
+        musicIcon.innerHTML = isPlaying ? '<path d="M6 5h4v14H6zM14 5h4v14h-4z"/>' : '<path d="M8 5v14l11-7z"/>';
+      }
+
+      let bgMuted = false;
+      function updateMuteIcon() {
+        const mutePath = bgMuted
+          ? '<path d="M16.5 12c0-1.77-.77-3.37-2-4.47v8.94c1.23-1.1 2-2.7 2-4.47zM7 9v6h4l5 5V4L11 9H7z"/><path d="M19 9l-6 6" stroke="currentColor" stroke-width="2" fill="none"/><path d="M13 9l6 6" stroke="currentColor" stroke-width="2" fill="none"/>'
+          : '<path d="M7 9v6h4l5 5V4L11 9H7z"/>';
+        document.getElementById('muteIcon').innerHTML = mutePath;
+      }
+
+      musicToggle.addEventListener('click', async () => {
+        const src = bgAudio?.querySelector('source')?.getAttribute('src') || '';
+        if (!src) { showToast('Add bg-music.mp3 to enable music.'); return; }
+        if (bgAudio.paused) {
+          await bgAudio.play().catch(() => showToast('Tap once more to allow audio.'));
+          try { localStorage.setItem('anniv_music', '1'); } catch(e){}
+        } else {
+          bgAudio.pause();
+          try { localStorage.setItem('anniv_music', '0'); } catch(e){}
+        }
+      });
+
+      muteBgBtn.addEventListener('click', () => {
+        bgMuted = !bgMuted;
+        bgAudio.muted = bgMuted;
+        updateMuteIcon();
+        showToast(bgMuted ? 'Background muted' : 'Background unmuted');
+      });
+
+      bgAudio.addEventListener('play', () => setMusicIcon(true));
+      bgAudio.addEventListener('pause', () => setMusicIcon(false));
+
+      shareBtn.addEventListener('click', async () => {
+        const title = "Our 1 Year — A small gift";
+        const text = "Open this little anniversary surprise.";
+        const url = location.href;
+        if (navigator.share) { try { await navigator.share({ title, text, url }); } catch(e) {} }
+        else { try { await navigator.clipboard.writeText(url); showToast('Link copied'); } catch(e) { prompt('Copy this link:', url); } }
+      });
+
+      function spawnHeart() {
+        const el = document.createElement('div');
+        el.className = 'mini-heart';
+        el.style.left = Math.random() * (window.innerWidth - 30) + 'px';
+        el.style.bottom = '-10px';
+        el.style.opacity = (0.85 + Math.random()*0.15).toString();
+        el.style.animation = `heartFloat ${6 + Math.random()*4}s linear forwards`;
+        heartsContainer.appendChild(el);
+        setTimeout(() => { try{ heartsContainer.removeChild(el); } catch(e){} }, 10000);
+      }
+      // Start hearts normally
+let heartInterval = setInterval(spawnHeart, 750);
+
+// Pause hearts on month-14, resume when leaving
+const month14 = document.getElementById('month-14');
+if (month14) {
+  const heartObserver = new MutationObserver(() => {
+    if (month14.classList.contains('active')) {
+      // Stop hearts when month-14 is open
+      clearInterval(heartInterval);
+      heartInterval = null;
+      // Also remove any hearts currently on screen
+      if (heartsContainer) heartsContainer.innerHTML = '';
+    } else {
+      // Resume hearts when leaving month-14
+      if (!heartInterval) {
+        heartInterval = setInterval(spawnHeart, 750);
+      }
+    }
+  });
+  heartObserver.observe(month14, { attributes: true });
+}
+
+      const ctx = confettiCanvas.getContext ? confettiCanvas.getContext('2d') : null;
+
+      function resizeCanvas(){
+        const dpr = window.devicePixelRatio || 1;
+        confettiCanvas.width = Math.floor(window.innerWidth * dpr);
+        confettiCanvas.height = Math.floor(window.innerHeight * dpr);
+        confettiCanvas.style.width = window.innerWidth + 'px';
+        confettiCanvas.style.height = window.innerHeight + 'px';
+        if (ctx) ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+      window.addEventListener('resize', resizeCanvas);
+      resizeCanvas();
+
+      let confettiParticles = [];
+      let confettiRAF = null;
+
+      function launchConfetti(){
+        if (!ctx) return;
+        confettiParticles = [];
+        const colors = ['#FF4F8B','#FFB7C5','#FFE3EB','#E6D9FF','#FFFFFF'];
+        for (let i=0;i<120;i++){
+          confettiParticles.push({
+            x: Math.random() * window.innerWidth,
+            y: -20 - Math.random() * window.innerHeight * 0.6,
+            w: 6 + Math.random()*10, h: 6 + Math.random()*10,
+            vx: -2 + Math.random()*4, vy: 2 + Math.random()*6,
+            rot: Math.random()*Math.PI*2, spin: -0.18 + Math.random()*0.36,
+            color: colors[Math.floor(Math.random()*colors.length)], drag: 0.995
+          });
+        }
+        if (confettiRAF) cancelAnimationFrame(confettiRAF);
+        animateConfetti();
+        setTimeout(() => { confettiParticles = []; if (ctx) ctx.clearRect(0,0,window.innerWidth, window.innerHeight); }, 7800);
+      }
+
+      function animateConfetti(){
+        if(!ctx) return;
+        ctx.clearRect(0,0,window.innerWidth, window.innerHeight);
+        for (const p of confettiParticles){
+          p.vx *= p.drag; p.x += p.vx; p.y += p.vy; p.vy += 0.06; p.rot += p.spin;
+          ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot);
+          ctx.fillStyle = p.color; ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h); ctx.restore();
+        }
+        if (confettiParticles.length) confettiRAF = requestAnimationFrame(animateConfetti);
+      }
+
+      if (finalCelebrate) {
+        finalCelebrate.addEventListener('click', () => {
+          for (let i = 0; i < 16; i++) setTimeout(spawnHeart, i * 110);
+          launchConfetti();
+          if (celebrateAudio) { try { celebrateAudio.currentTime = 0; celebrateAudio.play().catch(()=>{}); } catch(e) {} }
+        });
+      }
+
+      (function initGameVS(){
+        if (!gameSection) return;
+        const vsLeft = document.getElementById('vsLeft');
+        const vsRight = document.getElementById('vsRight');
+        const vsLeftImg = document.getElementById('vsLeftImg');
+        const vsRightImg = document.getElementById('vsRightImg');
+        const vsLeftName = document.getElementById('vsLeftName');
+        const vsRightName = document.getElementById('vsRightName');
+        const levelPill = document.getElementById('levelPill');
+        const scoreHerEl = document.getElementById('scoreHer');
+        const scoreThemEl = document.getElementById('scoreThem');
+        if (!vsLeft || !vsRight) return;
+
+        const HER = { id: 'her', name: 'Her', img: 'public/img/HER.jpeg' };
+        const OPPONENTS = [
+          { id:'duck',   name:'Cute Duck',      img:'public/img/duck.jpeg' },
+          { id:'idol',   name:'Jimin',          img:'public/img/jimin.jpg' },
+          { id:'singer', name:'Taylor Swift',   img:'public/img/t.jpeg' },
+          { id:'actor',  name:'Dhurandhar',     img:'public/img/rs.jpeg' },
+          { id:'anchor', name:'Arnab',          img:'public/img/Arnab.jpeg' },
+          { id:'chef',   name:'Master Chef',    img:'public/img/sanjeev.jpeg' },
+          { id:'model',  name:'Jennifer Lopez', img:'public/img/lopez.jpeg' },
+          { id:'cat',    name:'SUS Cat',        img:'public/img/sus_cat.jpg' }
+        ];
+
+        const MAX_LEVELS = 6, FORCE_WIN_LEVEL = 6, WRONG_BLOCK_MS = 900;
+        let level = 1, scoreHer = 0, scoreThem = 0, gameWon = false, lastOpponentId = null;
+        const wrongLines = ["Wrong pick. Next challenger unlocked.","Nope. Difficulty increased.","Nice try. New opponent incoming.","Not this one. Another VS round!","Still wrong. One more battle."];
+
+        function showGameMessage(text, ms=1400){
+          if(!gameMsg) return;
+          gameMsg.style.display = 'block'; gameMsg.textContent = text;
+          setTimeout(() => { if (gameMsg) { gameMsg.style.display = 'none'; gameMsg.textContent = ''; } }, ms);
+        }
+
+        function setButtonsBlocked(blocked){
+          [vsLeft, vsRight].forEach(b => { b.classList.toggle('blocked', blocked); b.disabled = blocked; });
+        }
+
+        const usedOpponentIds = new Set();
+
+        function pickOpponent(){
+          // Reset pool if all opponents have been used
+          if (usedOpponentIds.size >= OPPONENTS.length) {
+            usedOpponentIds.clear();
+          }
+          const pool = OPPONENTS.filter(o => !usedOpponentIds.has(o.id));
+          const opp = pool[Math.floor(Math.random() * pool.length)] || OPPONENTS[0];
+          usedOpponentIds.add(opp.id);
+          lastOpponentId = opp.id;
+          return opp;
+        }
+
+        function renderLevel(){
+          const opp = pickOpponent();
+          const herOnLeft = Math.random() < 0.5;
+          const left = herOnLeft ? HER : opp, right = herOnLeft ? opp : HER;
+          vsLeft.dataset.who = left.id; vsRight.dataset.who = right.id;
+          vsLeftImg.src = left.img; vsRightImg.src = right.img;
+          vsLeftName.textContent = left.name; vsRightName.textContent = right.name;
+          levelPill.textContent = `Level ${level} / ${MAX_LEVELS}`;
+          scoreHerEl.textContent = String(scoreHer); scoreThemEl.textContent = String(scoreThem);
+          vsLeft.classList.remove('shake'); vsRight.classList.remove('shake');
+          setButtonsBlocked(false);
+          try { const preload = new Image(); preload.src = pickOpponent().img; } catch(e){}
+        }
+
+        function winNow(){
+          gameWon = true;
+          try { winSfx.currentTime = 0; winSfx.play(); } catch(e){}
+          try { victoryAudio.currentTime = 0; victoryAudio.play(); } catch(e){}
+          const overlay = document.createElement('div');
+          overlay.className = 'success-overlay';
+          overlay.innerHTML = `<div class="success-title">She wins.</div><div class="success-sub">Best person confirmed. Final verdict: unbeatable.</div><div style="margin-top:12px"><button class="btn" id="sContinue">Continue</button></div>`;
+          gameSection.appendChild(overlay);
+          for(let i=0;i<16;i++) setTimeout(spawnHeart, i*110);
+          launchConfetti();
+          setTimeout(() => { try { overlay.remove(); } catch(e){} showHome(); }, 3200);
+          overlay.querySelector('#sContinue').addEventListener('click', () => { try { overlay.remove(); } catch(e){} showHome(); });
+        }
+
+        function handlePick(btn){
+          if (gameWon) return;
+          const who = btn.dataset.who;
+          if (who === 'her') {
+            scoreHer += 1; scoreHerEl.textContent = String(scoreHer);
+            showGameMessage("Correct choice. Instant win.", 900);
+            setButtonsBlocked(true); setTimeout(winNow, 650); return;
+          }
+          scoreThem += 1; scoreThemEl.textContent = String(scoreThem);
+          btn.classList.add('shake');
+          try { wrongSfx.currentTime = 0; wrongSfx.play(); } catch(e){}
+          showGameMessage(wrongLines[Math.floor(Math.random() * wrongLines.length)], 1200);
+          setButtonsBlocked(true);
+          if (level >= FORCE_WIN_LEVEL) {
+            setTimeout(() => { showGameMessage("Plot twist: she still wins.", 1100); winNow(); }, 900);
+            return;
+          }
+          level += 1; setTimeout(renderLevel, WRONG_BLOCK_MS);
+        }
+
+        vsLeft.addEventListener('click', () => handlePick(vsLeft), { passive:true });
+        vsRight.addEventListener('click', () => handlePick(vsRight), { passive:true });
+        [vsLeft, vsRight].forEach(b => { b.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); b.click(); } }); });
+
+        const resetObserver = new MutationObserver(muts => {
+          for (const m of muts){
+            if (m.attributeName !== 'class') continue;
+            if (!gameSection.classList.contains('hidden')) {
+              level = 1; scoreHer = 0; scoreThem = 0; gameWon = false; lastOpponentId = null;usedOpponentIds.clear();
+              if (gameMsg) { gameMsg.style.display = 'none'; gameMsg.textContent = ''; }
+              renderLevel();
+            }
+          }
+        });
+        resetObserver.observe(gameSection, { attributes: true });
+        renderLevel();
+      })();
+
+      let touchX = 0, touchY = 0, touching = false;
+      function getActiveSection(){ return sections.find(s => s.classList.contains('active')) || null; }
+
+      document.addEventListener('touchstart', e => {
+        const active = getActiveSection(); if (!active) return;
+        touching = true; touchX = e.touches[0].clientX; touchY = e.touches[0].clientY;
+      }, { passive: true });
+
+      document.addEventListener('touchend', e => {
+        if (!touching) return; touching = false;
+        const active = getActiveSection(); if (!active) return;
+        const endX = (e.changedTouches && e.changedTouches[0]) ? e.changedTouches[0].clientX : touchX;
+        const endY = (e.changedTouches && e.changedTouches[0]) ? e.changedTouches[0].clientY : touchY;
+        const dx = endX - touchX, dy = endY - touchY;
+        if (Math.abs(dx) < 70 || Math.abs(dx) < Math.abs(dy)) return;
+        if (dx < 0) { const nxt = active.querySelector('button[data-next]'); if (nxt) nxt.click(); }
+        else { const back = active.querySelector('button[data-goto]'); if (back) back.click(); }
+      }, { passive: true });
+
+      document.addEventListener('keydown', e => {
+        const active = getActiveSection(); if (!active) return;
+        if (e.key === 'ArrowLeft') { const back = active.querySelector('button[data-goto]'); if (back) back.click(); }
+        else if (e.key === 'ArrowRight') { const nxt = active.querySelector('button[data-next]'); if (nxt) nxt.click(); }
+      });
+
+      let lastTouch = 0;
+      document.addEventListener('touchend', e => {
+        const now = Date.now(); if (now - lastTouch <= 300) e.preventDefault(); lastTouch = now;
+      }, { passive: false });
+
+      sections.forEach(s => s.classList.add('hidden'));
+      splash.style.display = 'block';
+      home.style.display = 'none';
+    })();
+
+
+  /* ===== Month 14 — Golden Autumn (clean rewrite) ===== */
+(function initMonth14() {
+  const section = document.getElementById('month-14');
+  if (!section) return;
+
+  const leafEmojis = ['🍁','🍂','🌸','🌼','🏵️'];
+  let leafInterval = null;
+  let leavesActive = false;
+
+  function spawnLeaf() {
+    if (!leavesActive) return; // hard gate — if inactive, spawn nothing
+    const leaf = document.createElement('div');
+    leaf.className = 'm14-leaf';
+    leaf.textContent = leafEmojis[Math.floor(Math.random() * leafEmojis.length)];
+    leaf.style.left = (3 + Math.random() * 88) + 'vw';
+    leaf.style.fontSize = (1.05 + Math.random() * 0.75) + 'rem';
+    const dur = 12 + Math.random() * 6;
+    leaf.style.animationDuration = dur + 's';
+    document.body.appendChild(leaf);
+    setTimeout(() => leaf.remove(), dur * 1000 + 300);
+  }
+
+  function startLeaves() {
+    leavesActive = true;
+    spawnLeaf();
+    leafInterval = setInterval(spawnLeaf, 3200);
+  } 
+
+  function stopLeaves() {
+    leavesActive = false; // gate closes — any pending spawnLeaf calls do nothing
+    clearInterval(leafInterval);
+    leafInterval = null;
+    // Nuclear option: remove EVERY leaf directly from body right now
+    document.querySelectorAll('.m14-leaf').forEach(l => l.remove());
+  }
+
+  // Watch for class changes on the section
+  const observer = new MutationObserver(() => {
+    if (section.classList.contains('active')) {
+      setTimeout(() => {
+        if (section.classList.contains('active')) startLeaves();
+      }, 2200);
+    } else {
+      stopLeaves();
+    }
+  });
+  observer.observe(section, { attributes: true });
+
+  // Belt & braces — kill leaves the instant Back is clicked
+  section.querySelectorAll('button[data-goto], button[data-next]').forEach(btn => {
+    btn.addEventListener('click', stopLeaves, { capture: true });
+  });
+
+})();
+
+
+const updateVideo = document.getElementById('updateVideo');
+const sunflower = document.querySelector('#month-14 .m14-sunflower');
+
+const videoFull = document.getElementById('videoFull');
+if (videoFull) {
+  document.body.appendChild(videoFull);
+  videoFull.style.cssText = `
+    position: fixed !important;
+    inset: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0,0,0,0.93) !important;
+    display: none;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 2147483647 !important;
+  `;
+
+  // Close button only
+  const closeBtn = document.createElement('button');
+  closeBtn.textContent = '✕';
+  closeBtn.style.cssText = `
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    background: rgba(255,255,255,0.18);
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    z-index: 2147483647;
+  `;
+  closeBtn.addEventListener('click', () => {
+    updateVideo.pause();
+    updateVideo.currentTime = 0;
+    videoFull.style.display = 'none';
+  });
+  videoFull.appendChild(closeBtn);
+}
+
+if (sunflower && videoFull && updateVideo) {
+  sunflower.style.cursor = 'pointer';
+  sunflower.style.pointerEvents = 'all';
+
+  sunflower.addEventListener('click', (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    videoFull.style.display = 'flex';
+    updateVideo.currentTime = 0;
+    updateVideo.play().catch(()=>{});
+  });
+}
+// Add a close button to the overlay
+  const closeBtn = document.createElement('button');
+  closeBtn.textContent = '✕';
+  closeBtn.style.cssText = `position: absolute;top: 18px;right: 22px;background: rgba(255,255,255,0.18);border: none;color: #fff;font-size: 1.5rem;cursor: pointer; border-radius: 50%; width: 42px; height: 42px; z-index: 2147483647;`;
+  closeBtn.addEventListener('click', () => {
+    updateVideo.pause();
+    updateVideo.currentTime = 0;
+    videoFull.style.display = 'none';
+
+
+  });
+  videoFull.appendChild(closeBtn);
+
+      /* ===== Year Reveal — fully self-contained ===== */
+function playYearReveal(callback) {
+
+  // Build the overlay entirely in JS
+  const ov = document.createElement('div');
+  ov.style.cssText =
+    'position:fixed;top:0;left:0;width:100%;height:100%;' +
+    'background:#851742;z-index:2147483647;' +
+    'display:flex;flex-direction:column;' +
+    'align-items:center;justify-content:center;' +
+    'overflow:hidden;opacity:1;' +
+    'transition:opacity 0.7s ease;';
+  document.body.appendChild(ov);
+
+  // Golden glow blob
+  const glow = document.createElement('div');
+  glow.style.cssText =
+    'position:absolute;top:50%;left:50%;' +
+    'width:600px;height:600px;border-radius:50%;' +
+    'transform:translate(-50%,-50%) scale(0);' +
+    'background:radial-gradient(ellipse at center,' +
+    'rgba(212,175,55,0.18) 0%,rgba(180,140,20,0.10) 40%,transparent 72%);' +
+    'pointer-events:none;transition:transform 1.2s ease,opacity 1.2s ease;';
+  ov.appendChild(glow);
+
+  // 2025 text
+  const old = document.createElement('div');
+  old.textContent = '2025';
+  old.style.cssText =
+    'font-family:Pacifico,cursive;font-size:5rem;' +
+    'color:rgba(180,150,60,0.5);letter-spacing:6px;' +
+    'opacity:0;transform:translateY(10px);' +
+    'transition:opacity 0.7s ease,transform 0.7s ease;' +
+    'text-shadow:0 0 40px rgba(212,175,55,0.2);';
+  ov.appendChild(old);
+
+  // Divider line
+  const line = document.createElement('div');
+  line.style.cssText =
+    'width:0;height:1.5px;margin:16px 0;' +
+    'background:linear-gradient(90deg,transparent,rgba(212,175,55,0.8),transparent);' +
+    'transition:width 0.8s ease;';
+  ov.appendChild(line);
+
+  // 2026 text
+  const nw = document.createElement('div');
+  nw.textContent = '2026';
+  nw.style.cssText =
+    'font-family:Pacifico,cursive;font-size:7rem;' +
+    'background:linear-gradient(160deg,#fff8dc 0%,#f5d060 30%,#d4af37 52%,#f5d060 72%,#fff8dc 100%);' +
+    '-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;' +
+    'letter-spacing:4px;opacity:0;transform:scale(0.4) translateY(20px);' +
+    'filter:drop-shadow(0 0 30px rgba(212,175,55,0.6));' +
+    'transition:opacity 0.9s cubic-bezier(0.16,1,0.3,1),' +
+               'transform 0.9s cubic-bezier(0.16,1,0.3,1);';
+  ov.appendChild(nw);
+
+  // Subtitle
+  const sub = document.createElement('div');
+  sub.textContent = 'stronger · closer';
+  sub.style.cssText =
+    'font-family:Poppins,sans-serif;font-size:0.95rem;font-weight:600;' +
+    'letter-spacing:3.5px;text-transform:uppercase;' +
+    'color:rgba(212,175,55,0.7);margin-top:18px;' +
+    'opacity:0;transform:translateY(10px);' +
+    'transition:opacity 0.7s ease,transform 0.7s ease;';
+  ov.appendChild(sub);
+
+  // Particles
+  for (let i = 0; i < 18; i++) {
+    const p = document.createElement('div');
+    const size = 3 + Math.random() * 5;
+    p.style.cssText =
+      'position:absolute;border-radius:50%;pointer-events:none;' +
+      'background:radial-gradient(circle,rgba(212,175,55,0.85),transparent 70%);' +
+      'width:'  + size + 'px;height:' + size + 'px;' +
+      'left:'   + (5  + Math.random() * 90) + 'vw;' +
+      'top:'    + (20 + Math.random() * 60) + 'vh;' +
+      'opacity:0;transition:opacity 0.5s ease,' +
+               'transform ' + (3 + Math.random() * 2) + 's ease;' +
+      'transition-delay:' + (0.3 + Math.random() * 1.2) + 's;';
+    ov.appendChild(p);
+
+    // Animate particle upward
+    setTimeout(() => {
+      p.style.opacity = '0.75';
+      p.style.transform = 'translateY(-' + (60 + Math.random() * 120) + 'vh) scale(0.3)';
+    }, 50);
+  }
+
+  // ---- Animation timeline ----
+
+  // t=80ms: glow + 2025 appear
+  setTimeout(() => {
+    glow.style.transform = 'translate(-50%,-50%) scale(2)';
+    glow.style.opacity   = '1';
+    old.style.opacity    = '0.65';
+    old.style.transform  = 'translateY(0)';
+  }, 180);
+
+  // t=1400ms: line draws
+  setTimeout(() => {
+    line.style.width = '200px';
+  }, 3400);
+
+  // t=1900ms: 2025 fades out upward
+  setTimeout(() => {
+    old.style.opacity   = '0';
+    old.style.transform = 'translateY(-20px)';
+  }, 3900);
+
+  // t=2100ms: 2026 explodes in
+  setTimeout(() => {
+    nw.style.opacity   = '1';
+    nw.style.transform = 'scale(2) translateY(0)';
+  }, 3900);
+
+  // t=2700ms: subtitle fades in
+  setTimeout(() => {
+    sub.style.opacity   = '1';
+    sub.style.transform = 'translateY(0)';
+  }, 4500);
+
+  // t=3400ms: whole screen fades out
+  setTimeout(() => {
+    ov.style.opacity = '0';
+  }, 8400);
+
+  // t=4100ms: remove overlay, navigate
+  setTimeout(() => {
+    try { document.body.removeChild(ov); } catch(e) {}
+    if (typeof callback === 'function') callback();
+  }, 7100);
+}
+
+// "click here" beside sunflower
+const m14s = document.getElementById('month-14');
+const clickHint = document.createElement('div');
+clickHint.innerHTML =
+  '<div style="font-family:Pacifico,cursive;font-size:3rem;' +
+  'color:#ffe066;text-shadow:0 0 14px rgba(255,200,0,0.9),' +
+  '0 0 28px rgba(255,160,0,0.5),0 1px 3px rgba(0,0,0,0.2);">click here</div>' +
+  '<div style="font-size:4rem;color:#ffe080;margin-top:-2px;text-align:center;' +
+  'text-shadow:0 0 10px rgba(255,200,0,0.8);">→</div>';
+clickHint.style.cssText =
+  'position:fixed;bottom:290px;right:110px;' +
+  'display:none;flex-direction:column;align-items:center;' +
+  'background:transparent;' +
+  'z-index:2147483647;pointer-events:auto;' +
+  'animation:clickHintBounce 3.6s ease-in-out infinite;';
+document.body.appendChild(clickHint);
+
+const hintStyle = document.createElement('style');
+hintStyle.textContent =
+  '@keyframes clickHintBounce{' +
+  '0%,100%{transform:translateY(0);}' +
+  '50%{transform:translateY(-7px);}}';
+document.head.appendChild(hintStyle);
+
+if (m14s) {
+  new MutationObserver(() => {
+    if (m14s.classList.contains('active')) {
+      setTimeout(() => {
+        clickHint.style.display = 'flex';
+      }, 6000);
+    } else {
+      clickHint.style.display = 'none';
+    }
+  }).observe(m14s, { attributes: true });
+}
+  </script>
+</body>
+</html>
