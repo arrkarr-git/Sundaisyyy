@@ -507,6 +507,155 @@
   100% { transform: scale(1)    rotate(0deg);  opacity: 1; }
 }
 
+  
+              /*          QR CODE         */
+.qr-display-section {
+  width: 100%;
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.qr-with-text-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+}
+
+.qr-surprise-text {
+  font-family: "Pacifico", cursive;
+  font-size: 1.1rem;
+  color: var(--accent);
+  text-align: center;
+  text-shadow: 0 4px 12px rgba(255, 79, 139, 0.2);
+  margin: 0 0 10px 0;
+}
+
+.qr-image-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.qr-image {
+  width: 560px;
+  height: 560px;
+  border-radius: 20px;
+  background: white;
+  padding: 0px;
+  box-shadow: 
+    0 0 100px rgba(255, 79, 139, 1.5),
+    0 0 150px rgba(181, 138, 242, 1.4),
+    0 0 180px rgba(255, 183, 197, 1.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: qrSoftGlow 3.5s ease-in-out infinite;
+  margin-left: -80px;
+}
+
+.qr-image:hover {
+  transform: scale(1.08) translateY(-4px);
+  box-shadow: 
+    0 0 35px rgba(255, 79, 139, 0.6),
+    0 0 70px rgba(181, 138, 242, 0.45),
+    0 25px 50px rgba(35, 10, 60, 0.2);
+}
+
+@keyframes qrSoftGlow {
+  0%, 100% {
+    box-shadow: 
+      0 0 25px rgba(255, 79, 139, 0.4),
+      0 0 50px rgba(181, 138, 242, 0.3),
+      0 20px 40px rgba(35, 10, 60, 0.15);
+  }
+  50% {
+    box-shadow: 
+      0 0 35px rgba(255, 79, 139, 0.55),
+      0 0 65px rgba(181, 138, 242, 0.45),
+      0 25px 50px rgba(35, 10, 60, 0.2);
+  }
+}
+
+.qr-main-text {
+  font-family: "Pacifico", cursive;
+  font-size: 1.1rem;
+  color: var(--accent);
+  text-align: center;
+  text-shadow: 0 4px 12px rgba(255, 79, 139, 0.2);
+  margin: 0 0 10px 0;
+  margin-left: -60px;
+  font-size: 1.2rem;
+}
+
+.qr-side-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.qr-side-text {
+  font-size: 0.95rem;
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: left;
+  max-width: 160px;
+}
+
+.qr-spotify-emoji {
+  font-size: 2.2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  animation: emojiFloat 2.5s ease-in-out infinite;
+}
+
+.qr-spotify-emoji:hover {
+  transform: scale(1.2) rotate(10deg);
+  filter: drop-shadow(0 0 12px rgba(255, 79, 139, 0.5));
+}
+
+@keyframes emojiFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(5deg); }
+}
+
+@media (max-width: 640px) {
+  .qr-image {
+    width: 140px;
+    height: 140px;
+  }
+
+  .qr-spotify-emoji {
+    font-size: 2rem;
+  }
+}
+
+
+.birthday-text {
+  font-family: "Borel", cursive;
+  font-size: 4.4rem;
+  font-weight: 400;
+  color: #D946A6;
+  text-align: center;
+  text-shadow: 0 6px 20px rgba(217, 70, 166, 0.25);
+  margin: 60px 0 20px 0;
+  line-height: 1.5;
+  letter-spacing: 0px;
+  max-width: 90vw;
+  margin-left: -140px;
+}
+
   </style>
 </head>
 
@@ -580,6 +729,8 @@
         margin-bottom:4px;">2026</div>
         <div class="month-card" data-target="month-13">Month 13 <small>New Beginnings</small></div>
         <div class="month-card" data-target="month-14">Month 14 <small>Our 2nd Valentine's</small></div>
+        <div class="month-card" data-target="month-15">Month 15 <small>1.5 Years</small></div>
+
 
         <div class="month-card" data-target="game">Play: VS Game <small>Best person</small></div>
       </div>
@@ -743,7 +894,6 @@
     <div class="chev">Tip: swipe left/right to go next/back</div>
   </section>
 
-    <!-- ✅ MONTH 13 — Two photos side by side with individual date ribbons -->
   <section id="month-13" class="section hidden" aria-label="Month 13">
     <h3>Month 13 — New Beginnings</h3>
        <div class="img-pair">
@@ -763,10 +913,25 @@
     </div>
     <div class="chev">Tip: swipe left/right to go next/back</div>
   </section>
-  
 
 <section id="month-14" class="section hidden" aria-label="Month 14">
-  <!-- Pink-to-yellow overlay -->
+
+
+    <h3>Month 14 — Our 2nd Valentine's</h3>
+    <div class="img-wrap">
+      <img class="detail-img" src="public/img/month14.jpeg" alt="Month 14 image" loading="lazy">
+      <div class="ribbon">14 Feb 2026</div>
+    </div>
+   <div class="detail-text">
+      <p>Sundaisyyy reunites for this auspicious day once again. [online verion]</p>
+    </div>
+    <div class="nav-row">
+      <button class="btn" data-goto="month-13">Back</button>
+      <button class="btn" data-next="month-15">Next</button>
+    </div>
+    <div class="chev">Tip: swipe left/right to go next/back</div>
+
+      <!-- Pink-to-yellow overlay -->
 <div class="m14-overlay" aria-hidden="true"></div>
 
 <!-- Branch — top left corner -->
@@ -862,26 +1027,52 @@
   </g>
 </svg>
 
+  </section>
 
-
-    <h3>Month 14 — Our 2nd Valentine's</h3>
+  <section id="month-15" class="section hidden" aria-label="Month 15">
+    <h3>Month 15 - LLDP Winners</h3>
     <div class="img-wrap">
-      <img class="detail-img" src="public/img/month14.jpeg" alt="Month 14 image" loading="lazy">
-      <div class="ribbon">14 Feb 2026</div>
+      <img class="detail-img" src="public/img/month15b.png" alt="Month 15 image" loading="lazy">
+      <div class="ribbon">3 Mar 2026</div>
     </div>
-   <div class="detail-text">
-      <p>Sundaisyyy reunites for this auspicious day once again. [online verion]</p>
-    </div>
+    <div class="detail-text"><p>And she finally clears LLDP with ease, all the past tests were just a prep for the future 🙌🌸</p></div>
     <div class="nav-row">
-      <button class="btn" data-goto="month-13">Back</button>
+      <button class="btn" data-goto="month-14">Back</button>
       <button id="finalCelebrate" class="btn">Celebrate</button>
     </div>
     <div class="chev">Tip: swipe left/right to go next/back</div>
+
+    
+    <div class="qr-display-section">
+      <b><h2 class="birthday-text">happy birthday nidhzuuu!!! </h2></b>
+      <!-- Import Borel font -->
+  <link href="https://fonts.googleapis.com/css2?family=Borel&display=swap" rel="stylesheet">
+  <div class="qr-with-text-container">
+    
+    <!-- QR IMAGE + TEXT BELOW -->
+    <div class="qr-image-wrapper">
+      <img class="qr-image" src="public/img/qr-code_sunflower.png" alt="Spotify QR Code">
+      <p class="qr-main-text">A small surprise for the birthday girl🌸</p>
+    </div>
+
+    <!-- SMALL TEXT + SPOTIFY EMOJI -->
+    <div class="qr-side-text-container">
+      <p class="qr-side-text">Can't scan? No problem, Click here</p>
+      <a href="https://open.spotify.com/playlist/0FJ2aRWV6kppEKEZE1kJCe?si=0c241a5347bc4afa" target="_blank" class="qr-spotify-emoji">🎵</a>
+    </div>
+
+  </div>
+    </div>
   </section>
 
 
-   
 
+
+
+
+
+
+   <!--             GAME                 -->
   <section id="game" class="section hidden" aria-label="Best Person Game">
     <h3>Best Person in the World Competition</h3>
     <div class="detail-text" style="max-width:460px;text-align:center">
